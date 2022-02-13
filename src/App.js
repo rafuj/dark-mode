@@ -1,9 +1,23 @@
-import React, { useState, useEffect } from 'react'
-import data from './data'
-import Article from './Article'
+import React from "react";
+import Article from "./Article";
+import data from "./data";
 
 function App() {
-  return <h2>dark mode starter</h2>
+	return (
+		<main>
+			<nav>
+				<div className="nav-center">
+					<h1>overreacted</h1>
+					<button className="btn">Toggle</button>
+				</div>
+			</nav>
+			<section className="articles">
+				{data.map((item, index) => {
+					return <Article key={item.id} {...item} />;
+				})}
+			</section>
+		</main>
+	);
 }
 
-export default App
+export default App;
